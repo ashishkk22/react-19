@@ -1,10 +1,9 @@
-import { Button } from "antd";
-import SideMenu from "./components/Menu/Menu";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
 
 const App = () => (
   <div className="App">
-    <Button type="primary">Button</Button>
-    <SideMenu />
+    <RouterProvider router={router} />
   </div>
 );
 

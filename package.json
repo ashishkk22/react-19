@@ -13,7 +13,8 @@
     "@ant-design/icons": "^5.3.5",
     "antd": "^5.15.4",
     "react": "0.0.0-experimental-c3048aab4-20240326",
-    "react-dom": "0.0.0-experimental-c3048aab4-20240326"
+    "react-dom": "0.0.0-experimental-c3048aab4-20240326",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
