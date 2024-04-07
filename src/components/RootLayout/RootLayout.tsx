@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   CodeOutlined,
   MenuFoldOutlined,
@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, Button } from "antd";
+import { RouterPath } from "../../routes/router.type";
 
 const { Header, Content, Sider } = Layout;
 
@@ -30,16 +31,14 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem("use Hook", "sub1", <CodeOutlined />, [
-    getItem("Example 1", "5"),
-    getItem("Example 2", "6"),
-    getItem("Example 3", "7"),
+    getItem("Example 1", RouterPath.USE_EXAMPLE),
+    getItem("Example 2", RouterPath.USE_EXAMPLE_2),
   ]),
 
   { type: "divider" },
 
   getItem("Form actions", "sub2", <CodeOutlined />, [
-    getItem("Example 1", "9"),
-    getItem("Example 2", "10"),
+    getItem("Example", RouterPath.ACTION_EXAMPLE),
   ]),
   { type: "divider" },
 ];
@@ -49,6 +48,12 @@ const RootLayout = () => {
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
+  };
+
+  const navigate = useNavigate();
+
+  const onMenuClickHanlder = (e: { key: string }) => {
+    navigate(e.key);
   };
 
   return (
@@ -61,7 +66,8 @@ const RootLayout = () => {
             defaultOpenKeys={["sub1"]}
             mode="inline"
             items={items}
-            style={{ minHeight: "100vh" }}
+            style={{ minHeight: "100%" }}
+            onClick={onMenuClickHanlder}
           />
         </Sider>
         <Layout>
@@ -79,6 +85,7 @@ const RootLayout = () => {
               margin: "24px 16px",
               padding: 24,
               background: "#fff",
+              minHeight: "100vh",
             }}
           >
             <Outlet />
