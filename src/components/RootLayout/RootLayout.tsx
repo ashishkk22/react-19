@@ -34,11 +34,35 @@ const items: MenuItem[] = [
     getItem("Example 1", RouterPath.USE_EXAMPLE),
     getItem("Example 2", RouterPath.USE_EXAMPLE_2),
   ]),
-
   { type: "divider" },
 
   getItem("Form actions", "sub2", <CodeOutlined />, [
     getItem("Example", RouterPath.ACTION_EXAMPLE),
+  ]),
+  { type: "divider" },
+
+  getItem("useFormState", "sub3", <CodeOutlined />, [
+    getItem("Example", RouterPath.USE_FORM_STATE),
+  ]),
+  { type: "divider" },
+
+  getItem("useFormStatus", "sub4", <CodeOutlined />, [
+    getItem("Example", RouterPath.USE_FORM_STATUS),
+  ]),
+  { type: "divider" },
+
+  getItem("useOptimistic", "sub5", <CodeOutlined />, [
+    getItem("Example", RouterPath.USE_OPTIMISTIC),
+  ]),
+  { type: "divider" },
+
+  getItem("Metadata", "sub6", <CodeOutlined />, [
+    getItem("Example", RouterPath.DOCUMENT_METADATA),
+  ]),
+  { type: "divider" },
+
+  getItem("Ref Handling", "sub7", <CodeOutlined />, [
+    getItem("Example", RouterPath.REF_HANDLING),
   ]),
   { type: "divider" },
 ];
